@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de ROI SIRH</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="https://www.manatime.com/assets/img/logo.svg" alt="Manatime Logo" class="logo">
+
+            <!-- New Title for Quote Calculation -->
+            <h2>🧮 Calculez votre devis</h2>
+            <form id="price-form">
+                <label for="num-employees-quote">👥 Nombre de salariés :</label>
+                <input type="number" id="num-employees-quote" name="num-employees-quote" required>
+                
+                <label>Modules souhaités :</label>
+                <div>
+                    <input type="checkbox" id="module1" name="modules" value="Module Congés & absences">
+                    <label for="module1">Module Congés & absences</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="module2" name="modules" value="Module Heure supp/récup">
+                    <label for="module2">Module Heure supp/récup</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="module3" name="modules" value="Module Gestion du temps & des activités">
+                    <label for="module3">Module Gestion du temps & des activités</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="module4" name="modules" value="Module GED - Gestion des documents et fiches de paies">
+                    <label for="module4">Module GED - Gestion des documents et fiches de paies</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="module5" name="modules" value="Module Notes de frais">
+                    <label for="module5">Module Notes de frais</label>
+                </div>
+                
+                <button type="button" onclick="calculateQuote()">🧮 Calculer le devis</button>
+            </form>
+            <div id="quote-result"></div>
+
+            <!-- Moved Title for ROI Calculation -->
+            <h2>📊 Calculez votre ROI (Retour sur investissement)</h2>
+            <form id="roi-form">
+                <label for="num-hr">🧑‍💼 Nombre de professionnels RH :</label>
+                <input type="number" id="num-hr" name="num-hr" required>
+
+                <label for="hours-admin">🕒 Nombre d'heures de travail sur des tâches administratives par semaine :</label>
+                <input type="number" id="hours-admin" name="hours-admin" required>
+
+                <label for="error-rate">⚠️ Risque d'erreur (%) :</label>
+                <input type="number" id="error-rate" name="error-rate" required>
+                <p class="info-text">Selon une étude de PwC, le taux d'erreur moyen dans les processus de paie en France est de 3%</p>
+
+                <label for="cost-per-hour">💶 Coût horaire des professionnels RH (€) :</label>
+                <input type="number" id="cost-per-hour" name="cost-per-hour" required>
+
+                <label for="payroll">💰 Masse salariale annuelle (€) :</label>
+                <input type="number" id="payroll" name="payroll" required>
+
+                <button type="button" onclick="calculateROI()">🧮 Calculer le ROI</button>
+            </form>
+            <div id="result"></div>
+            <div id="explanation"></div>
+        </div>
+        <div class="right-side">
+            <div class="loom-video" style="position: relative; padding-bottom: 62.5%; height: 0;">
+                <iframe src="https://www.loom.com/embed/cb57857e57284b55b41c5450d2928094?sid=9ccd8d8c-2216-4636-84c6-d5840a96ff9b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+
+            <!-- Calendly Widget -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/manatime-sirh/60min" style="min-width:320px;height:700px;"></div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+            <!-- LinkedIn Posts -->
+            <div class="linkedin-posts">
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7151206882693562368" height="1565" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7150423586560737280" height="641" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7169264300841234432" height="1026" width="504" frameborder="0" allowfullscreen="" title="Post intégré"></iframe>
+            </div>
+
+            <!-- Book a Call Button -->
+            <button class="calendly-button fixed-button" onclick="window.location.href='https://calendly.com/manatime-sirh/60min'">📞 Book a Call</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
